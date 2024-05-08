@@ -1,4 +1,5 @@
 {
+ 
   "name": "citas",
   "version": "0.1.0",
   "private": true,
@@ -40,5 +41,5 @@
   "devDependencies": {
     "gh-pages": "^6.1.1"
   },
-  "homepage":"https://MarcosMellebovsky.github.io/Cita-para-perros"
+  "homepage": "https://MarcosMellebovsky.github.io/cita-para-perros-pt2"
 }
