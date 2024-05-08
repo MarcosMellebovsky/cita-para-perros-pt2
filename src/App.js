@@ -8,12 +8,10 @@ import Turno from './componentes/turno-final/Turno';
 function App() {
     const [citas, setCitas] = useState([]);
 
-    // Función para agregar una nueva cita al estado de citas
     const agregarCita = (nuevaCita) => {
         setCitas([...citas, nuevaCita]);
     }
 
-    // Función para eliminar una cita del estado de citas
     const eliminarCita = (e) => {
         const nuevasCitas = citas.filter((cita, index) => index !== e);
         setCitas(nuevasCitas);

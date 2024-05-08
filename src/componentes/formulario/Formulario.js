@@ -1,5 +1,3 @@
-
-
 import './Formulario.css';
 import { useState } from 'react';
 
@@ -12,14 +10,14 @@ function Formulario({ agregarCita }) {
         sintomas: ''
     });
 
-    const handleChange = (e) => {
+    const citaNueva = (e) => {
         setNuevaCita({
             ...nuevaCita,
             [e.target.name]: e.target.value
         });
     }
 
-    const handleSubmit = (e) => {
+    const citaFin = (e) => {
         e.preventDefault();
         agregarCita(nuevaCita);
         setNuevaCita({
@@ -33,22 +31,22 @@ function Formulario({ agregarCita }) {
 
     return (
         <div>
-            <form className="formulario" onSubmit={handleSubmit}>
+            <form className="formulario" onSubmit={citaFin}>
                 
             <label>Nombre Mascota</label>
-            <input type="text" name="mascota" value={nuevaCita.mascota} onChange={handleChange} placeholder="nombre de la mascota"/>
+            <input className='input-class' type="text" name="mascota" value={nuevaCita.mascota} onChange={citaNueva} placeholder="nombre de la mascota"/>
     
             <label>Nombre Dueño</label>
-            <input className='input-class' id="dueño" type="text" name="dueño" placeholder="Nombre dueño de la mascota" onChange={handleChange}/>
+            <input className='input-class' id="dueño" type="text" name="dueño" placeholder="Nombre dueño de la mascota" onChange={citaNueva}/>
     
             <label>Fecha</label>
-            <input className='input-class' id="fecha" type="date" name="fecha" onChange={handleChange}/>
+            <input className='input-class' id="fecha" type="date" name="fecha" onChange={citaNueva}/>
     
             <label>Hora</label>
-            <input className='input-class' id="hora" name="hora" type="time" onChange={handleChange}/>
+            <input className='input-class' id="hora" name="hora" type="time" onChange={citaNueva}/>
     
             <label>Sintomas</label>
-            <textarea id="sintomas" name="sintomas"onChange={handleChange}></textarea>
+            <textarea id="sintomas" name="sintomas"onChange={citaNueva}></textarea>
             <div className='div-btn'>
                 <button className='btn-form' type="submit">AGREGAR CITA</button>
             </div>
