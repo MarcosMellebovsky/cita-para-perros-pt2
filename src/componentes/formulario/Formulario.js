@@ -46,16 +46,16 @@ function Formulario({ agregarCita }) {
             <input className='input-class' type="text" name="mascota" value={nuevaCita.mascota} onChange={citaNueva} placeholder="nombre de la mascota"/>
     
             <label>Nombre Dueño</label>
-            <input className='input-class' id="dueño" type="text" name="dueño" placeholder="Nombre dueño de la mascota" onChange={citaNueva}/>
+            <input className='input-class' id="dueño" type="text" name="dueño" value={nuevaCita.dueño}  placeholder="Nombre dueño de la mascota" onChange={citaNueva}/>
     
             <label>Fecha</label>
-            <input className='input-class' id="fecha" type="date" name="fecha" onChange={citaNueva}/>
+            <input className='input-class' id="fecha" type="date" name="fecha"value={nuevaCita.fecha} onChange={citaNueva}/>
     
             <label>Hora</label>
-            <input className='input-class' id="hora" name="hora" type="time" onChange={citaNueva}/>
+            <input className='input-class' id="hora" name="hora" type="time" value={nuevaCita.hora}onChange={citaNueva}/>
     
             <label>Síntomas</label>
-            <textarea id="sintomas" name="sintomas" onChange={citaNueva}></textarea>
+            <textarea id="sintomas" name="sintomas"value={nuevaCita.sintomas} onChange={citaNueva}></textarea>
             <div className='div-btn'>
                 <button className='btn-form' type="submit">AGREGAR CITA</button>
             </div>
