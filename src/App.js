@@ -13,8 +13,12 @@ function App() {
     }
 
     const eliminarCita = (e) => {
-        const nuevasCitas = citas.filter((cita, index) => index !== e);
-        setCitas(nuevasCitas);
+        const confirmacion2 = window.confirm("¿Estás seguro que queres eliminar la consulta?");
+        if (confirmacion2) {
+             const nuevasCitas = citas.filter((cita, index) => index !== e);
+            setCitas(nuevasCitas);
+        }
+       
     }
 
     return (
