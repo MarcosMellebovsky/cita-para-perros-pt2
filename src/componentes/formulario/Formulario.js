@@ -19,6 +19,12 @@ function Formulario({ agregarCita }) {
 
     const citaFin = (e) => {
         e.preventDefault();
+
+        if (!nuevaCita.mascota || !nuevaCita.dueño || !nuevaCita.fecha || !nuevaCita.hora || !nuevaCita.sintomas) {
+            alert('Por favor completa todos los campos.');
+            return;
+        }
+
         const confirmacion = window.confirm("¿Estás seguro de hacer esta consulta?");
         if (confirmacion) {
             agregarCita(nuevaCita);
@@ -37,19 +43,19 @@ function Formulario({ agregarCita }) {
             <form className="formulario" onSubmit={citaFin}>
                 
             <label>Nombre Mascota</label>
-            <input className='input-class' type="text" name="mascota" value={nuevaCita.mascota} onChange={citaNueva} placeholder="nombre de la mascota" required/>
+            <input className='input-class' type="text" name="mascota" value={nuevaCita.mascota} onChange={citaNueva} placeholder="nombre de la mascota"/>
     
             <label>Nombre Dueño</label>
-            <input className='input-class' id="dueño" type="text" name="dueño" placeholder="Nombre dueño de la mascota" onChange={citaNueva} required/>
+            <input className='input-class' id="dueño" type="text" name="dueño" placeholder="Nombre dueño de la mascota" onChange={citaNueva}/>
     
             <label>Fecha</label>
-            <input className='input-class' id="fecha" type="date" name="fecha" onChange={citaNueva} required/>
+            <input className='input-class' id="fecha" type="date" name="fecha" onChange={citaNueva}/>
     
             <label>Hora</label>
-            <input className='input-class' id="hora" name="hora" type="time" onChange={citaNueva} required/>
+            <input className='input-class' id="hora" name="hora" type="time" onChange={citaNueva}/>
     
             <label>Síntomas</label>
-            <textarea id="sintomas" name="sintomas" onChange={citaNueva} required></textarea>
+            <textarea id="sintomas" name="sintomas" onChange={citaNueva}></textarea>
             <div className='div-btn'>
                 <button className='btn-form' type="submit">AGREGAR CITA</button>
             </div>
