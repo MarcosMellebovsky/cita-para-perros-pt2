@@ -55,7 +55,7 @@ function Formulario({ agregarCita }) {
             <input className='input-class' id="hora" name="hora" type="time" value={nuevaCita.hora}onChange={citaNueva}/>
     
             <label>Síntomas</label>
-            <textarea id="sintomas" name="sintomas"value={nuevaCita.sintomas} onChange={citaNueva}></textarea>
+            <textarea id="sintomas"placeholder='Escriba aqui sus sintomas' name="sintomas"value={nuevaCita.sintomas} onChange={citaNueva}></textarea>
             <div className='div-btn'>
                 <button className='btn-form' type="submit">AGREGAR CITA</button>
             </div>
